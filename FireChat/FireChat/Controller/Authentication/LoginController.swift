@@ -19,60 +19,19 @@ class LoginController: UIViewController{
         return iv
     }()
     
-    private lazy var emailContainerView: UIView = {
-        let containerView = UIView()
-        containerView.backgroundColor = .clear
-        
-        let iv = UIImageView()
-        iv.image = UIImage(systemName: "envelope")
-        iv.tintColor = .white
-        
-        containerView.addSubview(iv)
-        iv.centerY(inView: containerView)
-        iv.anchor(left: containerView.leftAnchor, paddingLeft: 8)
-        iv.setDimensions(height: 24, width: 28)
-        
-        containerView.addSubview(emailTextField)
-        emailTextField.centerY(inView: containerView)
-        emailTextField.anchor(left: iv.rightAnchor, bottom: containerView.bottomAnchor, right: containerView.rightAnchor, paddingLeft: 8, paddingBottom: -8)
-        
-        containerView.setHeight(height: 50)
-        return containerView
+    private lazy var emailContainerView: InputContainerView = {
+        return InputContainerView(image: UIImage(systemName: "envelope"), textField: emailTextField)
     }()
     
-    private let emailTextField: UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Email"
-        tf.textColor = .white
-        return tf
+    private let emailTextField = CustomeTextField(placeholder: "Email")
+    
+    private lazy var passwordContainerView: InputContainerView = {
+        return InputContainerView(image: UIImage(systemName: "lock"), textField: passwordTextField)
     }()
     
-    private lazy var passwordContainerView: UIView = {
-        let containerView = UIView()
-        containerView.backgroundColor = .clear
-        
-        let iv = UIImageView()
-        iv.image = UIImage(systemName: "lock")
-        iv.tintColor = .white
-        
-        containerView.addSubview(iv)
-        iv.centerY(inView: containerView)
-        iv.anchor(left: containerView.leftAnchor, paddingLeft: 8)
-        iv.setDimensions(height: 28, width: 28)
-        
-        containerView.addSubview(passwordTextField)
-        passwordTextField.centerY(inView: containerView)
-        passwordTextField.anchor(left: iv.rightAnchor, bottom: containerView.bottomAnchor, right: containerView.rightAnchor, paddingLeft: 8, paddingBottom: -8)
-        
-        containerView.setHeight(height: 50)
-        return containerView
-    }()
-    
-    private let passwordTextField: UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Password"
+    private let passwordTextField: CustomeTextField = {
+        let tf = CustomeTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
-        tf.textColor = .white
         return tf
     }()
     
