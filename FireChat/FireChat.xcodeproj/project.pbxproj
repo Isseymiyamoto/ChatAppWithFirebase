@@ -14,6 +14,9 @@
 		859DF6B724AB454F00D580C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859DF6B624AB454F00D580C6 /* Assets.xcassets */; };
 		859DF6BA24AB454F00D580C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859DF6B824AB454F00D580C6 /* LaunchScreen.storyboard */; };
 		859DF6CB24AB460A00D580C6 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DF6CA24AB460A00D580C6 /* ConversationsController.swift */; };
+		859DF6CE24AB6A5B00D580C6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DF6CD24AB6A5B00D580C6 /* LoginController.swift */; };
+		859DF6D024AB6A7400D580C6 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DF6CF24AB6A7400D580C6 /* RegistrationController.swift */; };
+		859DF6D224AB6D9B00D580C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DF6D124AB6D9B00D580C6 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		859DF6B924AB454F00D580C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		859DF6BB24AB454F00D580C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		859DF6CA24AB460A00D580C6 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		859DF6CD24AB6A5B00D580C6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		859DF6CF24AB6A7400D580C6 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		859DF6D124AB6D9B00D580C6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		859DF6C124AB459A00D580C6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				859DF6D124AB6D9B00D580C6 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -92,6 +99,7 @@
 		859DF6C624AB45BE00D580C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				859DF6CC24AB6A4200D580C6 /* Authentication */,
 				859DF6CA24AB460A00D580C6 /* ConversationsController.swift */,
 			);
 			path = Controller;
@@ -116,6 +124,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		859DF6CC24AB6A4200D580C6 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				859DF6CD24AB6A5B00D580C6 /* LoginController.swift */,
+				859DF6CF24AB6A7400D580C6 /* RegistrationController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +210,9 @@
 				859DF6AE24AB454C00D580C6 /* AppDelegate.swift in Sources */,
 				859DF6CB24AB460A00D580C6 /* ConversationsController.swift in Sources */,
 				859DF6B024AB454C00D580C6 /* SceneDelegate.swift in Sources */,
+				859DF6D024AB6A7400D580C6 /* RegistrationController.swift in Sources */,
+				859DF6CE24AB6A5B00D580C6 /* LoginController.swift in Sources */,
+				859DF6D224AB6D9B00D580C6 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
