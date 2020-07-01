@@ -6,8 +6,6 @@
 //  Copyright © 2020 ISSEY MIYAMOTO. All rights reserved.
 //
 
-// 修正
-
 import UIKit
 
 class InputContainerView: UIView {
