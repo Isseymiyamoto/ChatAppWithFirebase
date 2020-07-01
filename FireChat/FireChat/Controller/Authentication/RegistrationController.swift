@@ -12,10 +12,13 @@ class RegistrationController: UIViewController{
     
     // MARK: - Properties
     
+    private var viewModel = RegistrationViewModel()
+    
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "plus_photo"), for: .normal)
         button.tintColor = .white
+        button.clipsToBounds = true
         button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         return button
     }()
@@ -54,7 +57,8 @@ class RegistrationController: UIViewController{
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        button.isEnabled = false
         button.setHeight(height: 50)
         return button
     }()
@@ -75,16 +79,33 @@ class RegistrationController: UIViewController{
         super.viewDidLoad()
         
         configureUI()
+        configureNotificationObservers()
     }
     
     // MARK: - Selectors
     
     @objc func handleSelectPhoto(){
-        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true)
     }
     
     @objc func handleShowLogin(){
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField){
+        if sender == emailTextField{
+            viewModel.email = sender.text
+        }else if sender == fullnameTextField{
+            viewModel.fullname = sender.text
+        }else if sender == usernameTextField{
+            viewModel.username = sender.text
+        }else {
+            viewModel.password = sender.text
+        }
+        
+        checkFormStatus()
     }
     
     // MARK: - Helpers
@@ -116,11 +137,44 @@ class RegistrationController: UIViewController{
                                         right: view.rightAnchor,
                                         paddingLeft: 32,
                                         paddingRight: 32)
+        
+        
     }
     
+    func configureNotificationObservers(){
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
 }
 
 
-extension RegistrationController: UIImagePickerControllerDelegate{
-    
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as? UIImage
+        plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        plusPhotoButton.imageView?.contentMode = .scaleAspectFit
+        plusPhotoButton.layer.borderColor = UIColor.white.cgColor
+        plusPhotoButton.layer.borderWidth = 3
+        plusPhotoButton.layer.cornerRadius = 200 / 2
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - AuthenticationControllerProtocol
+
+extension RegistrationController: AuthenticationControllerProtocol{
+    func checkFormStatus(){
+        if viewModel.formIsValid {
+            signUpButton.isEnabled = true
+            signUpButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        }else{
+            signUpButton.isEnabled = false
+            signUpButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        }
+    }
 }
