@@ -48,13 +48,14 @@ class ConversationsController: UIViewController {
         if Auth.auth().currentUser?.uid == nil {
             presentLoginScreen()
         }else{
-            print("DEBUG: User ID is \(Auth.auth().currentUser?.uid)")
+            print("DEBUG: User ID is \(Auth.auth().currentUser?.uid ?? "nothing")")
         }
     }
     
     func logout(){
         do{
             try Auth.auth().signOut()
+            presentLoginScreen()
         }catch let error{
             print("DEBUG: error is \(error.localizedDescription)")
         }
