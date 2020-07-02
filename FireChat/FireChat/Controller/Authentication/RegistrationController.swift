@@ -69,7 +69,7 @@ class RegistrationController: UIViewController{
     private let alreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedText = NSMutableAttributedString(string: "Already have an account?  ", attributes: [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 16)])
-        attributedText.append(NSAttributedString(string: "Log In", attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.white]))
+        attributedText.append(NSAttributedString(string: "Sign Up", attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.white]))
         button.setAttributedTitle(attributedText, for: .normal)
         button.addTarget(self, action: #selector(handleShowLogin), for: .touchUpInside)
         return button
@@ -96,11 +96,15 @@ class RegistrationController: UIViewController{
         
         let credentials = RegistrationCredentials(email: email, password: password, fullname: fullname, username: username, profileImage: profileImage)
         
+        showLoader(true, withText: "Signing You Up")
+        
         AuthService.shared.createUser(credentials: credentials) { (error) in
             if let error = error{
                 print("DEBUG: failed to create user with error \(error.localizedDescription)")
-                return 
+                self.showLoader(false)
+                return
             }
+            self.showLoader(false)
             self.dismiss(animated: true, completion: nil)
         }
         
@@ -128,6 +132,18 @@ class RegistrationController: UIViewController{
         }
         
         checkFormStatus()
+    }
+    
+    @objc func keyboardWillShow(){
+        if view.frame.origin.y == 0{
+            self.view.frame.origin.y -= 88
+        }
+    }
+    
+    @objc func keyboardWillHide(){
+        if view.frame.origin.y != 0{
+            view.frame.origin.y = 0
+        }
     }
     
     // MARK: - Helpers
@@ -168,6 +184,9 @@ class RegistrationController: UIViewController{
         fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 
