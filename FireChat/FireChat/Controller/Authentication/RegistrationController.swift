@@ -69,7 +69,7 @@ class RegistrationController: UIViewController{
     private let alreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedText = NSMutableAttributedString(string: "Already have an account?  ", attributes: [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 16)])
-        attributedText.append(NSAttributedString(string: "Sign Up", attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.white]))
+        attributedText.append(NSAttributedString(string: "Log In", attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.white]))
         button.setAttributedTitle(attributedText, for: .normal)
         button.addTarget(self, action: #selector(handleShowLogin), for: .touchUpInside)
         return button
