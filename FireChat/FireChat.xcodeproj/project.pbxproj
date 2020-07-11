@@ -25,6 +25,7 @@
 		859DF6D424AB897400D580C6 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DF6D324AB897400D580C6 /* InputContainerView.swift */; };
 		859DF6D624AB8CB700D580C6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DF6D524AB8CB700D580C6 /* CustomTextField.swift */; };
 		85D07B4E24ACBC5000EC9BD8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D07B4D24ACBC5000EC9BD8 /* AuthService.swift */; };
+		85F6D9E124B9DD810051C5D9 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F6D9E024B9DD810051C5D9 /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		859DF6D324AB897400D580C6 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		859DF6D524AB8CB700D580C6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		85D07B4D24ACBC5000EC9BD8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		85F6D9E024B9DD810051C5D9 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				859DF6D324AB897400D580C6 /* InputContainerView.swift */,
 				859DF6D524AB8CB700D580C6 /* CustomTextField.swift */,
+				85F6D9E024B9DD810051C5D9 /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				85D07B4E24ACBC5000EC9BD8 /* AuthService.swift in Sources */,
 				859DF6AE24AB454C00D580C6 /* AppDelegate.swift in Sources */,
 				859DF6CB24AB460A00D580C6 /* ConversationsController.swift in Sources */,
+				85F6D9E124B9DD810051C5D9 /* UserCell.swift in Sources */,
 				859DF6B024AB454C00D580C6 /* SceneDelegate.swift in Sources */,
 				859DF6D024AB6A7400D580C6 /* RegistrationController.swift in Sources */,
 				859DF6CE24AB6A5B00D580C6 /* LoginController.swift in Sources */,
