@@ -13,6 +13,7 @@
 		850EAEB924AC2B3C00762CF5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 850EAEB824AC2B3C00762CF5 /* GoogleService-Info.plist */; };
 		8529F50124BB55230058F4FA /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8529F50024BB55230058F4FA /* CustomInputAccessoryView.swift */; };
 		854B4C1724AF0CC400FA5E8B /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B4C1624AF0CC400FA5E8B /* NewMessageController.swift */; };
+		8591BD2524BD36920001BEA0 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591BD2424BD36920001BEA0 /* MessageCell.swift */; };
 		859DF6AE24AB454C00D580C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DF6AD24AB454C00D580C6 /* AppDelegate.swift */; };
 		859DF6B024AB454C00D580C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DF6AF24AB454C00D580C6 /* SceneDelegate.swift */; };
 		859DF6B224AB454C00D580C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DF6B124AB454C00D580C6 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		850EAEB824AC2B3C00762CF5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8529F50024BB55230058F4FA /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 		854B4C1624AF0CC400FA5E8B /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		8591BD2424BD36920001BEA0 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		859DF6AA24AB454C00D580C6 /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859DF6AD24AB454C00D580C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		859DF6AF24AB454C00D580C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				859DF6D524AB8CB700D580C6 /* CustomTextField.swift */,
 				85F6D9E024B9DD810051C5D9 /* UserCell.swift */,
 				8529F50024BB55230058F4FA /* CustomInputAccessoryView.swift */,
+				8591BD2424BD36920001BEA0 /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				859DF6B024AB454C00D580C6 /* SceneDelegate.swift in Sources */,
 				85F6D9E324B9E1110051C5D9 /* User.swift in Sources */,
 				85F6D9E524B9E1B20051C5D9 /* Service.swift in Sources */,
+				8591BD2524BD36920001BEA0 /* MessageCell.swift in Sources */,
 				859DF6D024AB6A7400D580C6 /* RegistrationController.swift in Sources */,
 				859DF6CE24AB6A5B00D580C6 /* LoginController.swift in Sources */,
 				859DF6D224AB6D9B00D580C6 /* Extensions.swift in Sources */,
