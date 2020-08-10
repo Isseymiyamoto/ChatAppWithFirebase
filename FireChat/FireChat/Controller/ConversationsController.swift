@@ -33,9 +33,15 @@ class ConversationsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        authenticateUser()
         configureUI()
+        authenticateUser()
         fetchConversations()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
     }
     
     // MARK: - Selectors
@@ -93,7 +99,6 @@ class ConversationsController: UIViewController {
     func configureUI(){
         view.backgroundColor = .white
         
-        configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
         configureTableView()
         
         let image = UIImage(systemName: "person.circle.fill")
@@ -139,7 +144,9 @@ extension ConversationsController: UITableViewDataSource{
 
 extension ConversationsController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("DEBUG: indexPath is \(indexPath.row)")
+        let user = conversations[indexPath.row].user
+        let chat = ChatController(user: user)
+        navigationController?.pushViewController(chat, animated: true)
     }
     
 }
