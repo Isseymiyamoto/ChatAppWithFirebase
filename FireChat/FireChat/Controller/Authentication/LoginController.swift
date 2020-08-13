@@ -14,10 +14,14 @@ protocol AuthenticationControllerProtocol {
     func checkFormStatus()
 }
 
+protocol AuthenticationDelegate: class {
+    func authenticationComplete()
+}
+
 class LoginController: UIViewController{
     
     // MARK: - Properties
-    
+    weak var delegate: AuthenticationDelegate?
     private var viewModel = LoginViewModel()
     
     private let iconImage: UIImageView = {
@@ -92,6 +96,7 @@ class LoginController: UIViewController{
             }
             
             self.showLoader(false)
+            self.delegate?.authenticationComplete()
             self.dismiss(animated: true, completion: nil)
         }
         
@@ -100,6 +105,7 @@ class LoginController: UIViewController{
     
     @objc func handleShowLogin(){
         let controller = RegistrationController()
+        controller.delegate = delegate
         navigationController?.pushViewController(controller, animated: true)
     }
     
