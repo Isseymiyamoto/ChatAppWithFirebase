@@ -17,6 +17,7 @@ class ConversationsController: UIViewController {
     
     private let tableView = UITableView()
     private var conversations = [Conversation]()
+    private var conversationsDictionary = [String: Conversation]()
     
     private let newMessageButton: UIButton = {
         let button = UIButton(type: .system)
@@ -66,7 +67,11 @@ class ConversationsController: UIViewController {
     
     func fetchConversations(){
         Service.fetchConversations { (conversations) in
-            self.conversations = conversations
+            conversations.forEach { (conversation) in
+                let message = conversation.message
+                self.conversationsDictionary[message.chatPartnerId] = conversation
+            }
+            self.conversations = Array(self.conversationsDictionary.values)
             self.tableView.reloadData()
         }
     }
