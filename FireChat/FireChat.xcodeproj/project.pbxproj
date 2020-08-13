@@ -31,6 +31,8 @@
 		859DF6D624AB8CB700D580C6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DF6D524AB8CB700D580C6 /* CustomTextField.swift */; };
 		85C6A79C24E52288007FD77D /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6A79B24E52288007FD77D /* ConversationCell.swift */; };
 		85C6A79E24E525C3007FD77D /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6A79D24E525C3007FD77D /* ConversationViewModel.swift */; };
+		85C6A7A024E52B83007FD77D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6A79F24E52B83007FD77D /* ProfileController.swift */; };
+		85C6A7A224E52CB6007FD77D /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6A7A124E52CB6007FD77D /* ProfileHeader.swift */; };
 		85D07B4E24ACBC5000EC9BD8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D07B4D24ACBC5000EC9BD8 /* AuthService.swift */; };
 		85F6D9E124B9DD810051C5D9 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F6D9E024B9DD810051C5D9 /* UserCell.swift */; };
 		85F6D9E324B9E1110051C5D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F6D9E224B9E1110051C5D9 /* User.swift */; };
@@ -67,6 +69,8 @@
 		859DF6D524AB8CB700D580C6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		85C6A79B24E52288007FD77D /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		85C6A79D24E525C3007FD77D /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		85C6A79F24E52B83007FD77D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		85C6A7A124E52CB6007FD77D /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		85D07B4D24ACBC5000EC9BD8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		85F6D9E024B9DD810051C5D9 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		85F6D9E224B9E1110051C5D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				859DF6CA24AB460A00D580C6 /* ConversationsController.swift */,
 				854B4C1624AF0CC400FA5E8B /* NewMessageController.swift */,
 				85F6D9E624BA20690051C5D9 /* ChatController.swift */,
+				85C6A79F24E52B83007FD77D /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				8529F50024BB55230058F4FA /* CustomInputAccessoryView.swift */,
 				8591BD2424BD36920001BEA0 /* MessageCell.swift */,
 				85C6A79B24E52288007FD77D /* ConversationCell.swift */,
+				85C6A7A124E52CB6007FD77D /* ProfileHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C6A7A024E52B83007FD77D /* ProfileController.swift in Sources */,
 				859DF6B224AB454C00D580C6 /* ViewController.swift in Sources */,
 				8555C38E24D65FE400DE30DA /* Constants.swift in Sources */,
 				850EAEB624AC1F9A00762CF5 /* RegistrationViewModel.swift in Sources */,
@@ -354,6 +361,7 @@
 				859DF6D024AB6A7400D580C6 /* RegistrationController.swift in Sources */,
 				859DF6CE24AB6A5B00D580C6 /* LoginController.swift in Sources */,
 				859DF6D224AB6D9B00D580C6 /* Extensions.swift in Sources */,
+				85C6A7A224E52CB6007FD77D /* ProfileHeader.swift in Sources */,
 				850EAEB424AC174F00762CF5 /* LoginViewModel.swift in Sources */,
 				85F6D9E724BA20690051C5D9 /* ChatController.swift in Sources */,
 				859DF6D624AB8CB700D580C6 /* CustomTextField.swift in Sources */,
