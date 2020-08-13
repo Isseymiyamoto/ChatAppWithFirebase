@@ -45,7 +45,10 @@ class NewMessageController: UITableViewController {
     // MARK: - API
     
     func fetchUsers(){
+        showLoader(true)
+        
         Service.fetchUsers { (users) in
+            self.showLoader(false)
             self.users = users
             self.tableView.reloadData()
         }
@@ -98,7 +101,7 @@ extension NewMessageController{
 extension NewMessageController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = isSearchMode ? filteredUsers[indexPath.row] : users[indexPath.row]
-        delegate?.controller(self, wantsToStartChatWith: users[indexPath.row])
+        delegate?.controller(self, wantsToStartChatWith: user)
     }
 }
 

@@ -90,8 +90,8 @@ class LoginController: UIViewController{
         
         AuthService.shared.logUserIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
-                print("DEBUG: Failed to log in with error is \(error.localizedDescription)")
                 self.showLoader(false)
+                self.showError(error.localizedDescription)
                 return
             }
             
